@@ -1,7 +1,7 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
-#api keys
-.env
+#api key
+apikey.js
 
 # dependencies
 /node_modules
