@@ -43,7 +43,7 @@ const Welcome = () =>{
         <Background>
             <Container className='p-5 flex justify-content-center shadow-lg bg-white rounded'>
                 <Title>Welcome to Geek Jokes App </Title>
-                <Button type="button" className='btn btn-dark btn-lg' onClick={handleClick}>Have fun!</Button>                 
+                <Button type="button" className='btn btn-dark btn-lg mt-2' onClick={handleClick}>Have fun!</Button>                 
             </Container>                       
         </Background>        
     )

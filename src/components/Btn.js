@@ -3,14 +3,14 @@ import Button from 'react-bootstrap/Button'
 import styled from 'styled-components';
 
 const PositionBtn = styled.div`
-    margin-top: 8rem;
+    margin-top: 4rem;
     padding: 0 3rem 0 3rem
 `
 
 const Btn = ({click}) => {
     return(
         <PositionBtn>
-            <Button variant='info' className='ml-5 btn-lg' onClick={click}>Next Joke</Button>
+            <Button style={{'background-color':'#55162b'}} className='btn-lg' onClick={click}>Next Joke</Button>
         </PositionBtn>
         
     )

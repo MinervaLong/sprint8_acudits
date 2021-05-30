@@ -4,40 +4,55 @@ import Joke from './Joke'
 import Btn from './Btn'
 import Weather from './Weather'
 import ComeBack from './ComeBack'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import styled from 'styled-components';
 
 const Main = styled.main`
-    background: #2980B9; 
-    background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);
-    padding-top:3rem;
+    background: #F7D863; 
+    padding-left: 1rem;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+
+    @media (max-width: 800px){
+        padding-left: 0rem;
+    }
+`
+const Container = styled.div`
+    width: 30rem;
+    height: 30rem;
+    background: #FFFFFF;
+    border: 5px solid #FFFFFF;
+    border-radius: 50%;
+    box-shadow: -12px -2px 109px -17px rgba(123,109,109);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: 800px){
+        width: 100%;
+        height: 100%;
+        border-radius: 0%;
+    }
 `
 
 const MainComponent = ({weather, temp, joke, click}) => {
     return(
         <Main>
-            <ComeBack />
-            <Weather weather={weather} temp={temp}/>
-            <Container className='p-5 flex justify-content-center shadow-lg p-3 mb-5 bg-white rounded'>
-                <Row className="justify-content-md-center position-relative">
-                    <Col xs lg='1' className='p-0'></Col>
-                    <Col md='6' lg='4' className='p-0'>
-                        <Row>
-                            <Header />
-                        </Row>
-                        <Row>
-                            <Joke joke={joke}/>
-                        </Row>                  
-                        <Row>
-                            <Btn click={click}/>
-                        </Row>                        
-                    </Col>
-                    <Col xs lg='1' className='p-0'></Col>
-                </Row>                      
+            <ComeBack />            
+            <Container >
+                <Header />
+                <Joke joke={joke}/>
+                <Btn click={click}/>                                      
             </Container>
+            <Weather weather={weather} temp={temp}/>
         </Main>
     )
 }
