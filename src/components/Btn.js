@@ -7,10 +7,10 @@ const PositionBtn = styled.div`
     padding: 0 3rem 0 3rem
 `
 
-const Btn = (props) => {
+const Btn = ({click}) => {
     return(
         <PositionBtn>
-            <Button variant='info' className='ml-5 btn-lg' onClick={props.click}>Next Joke</Button>
+            <Button variant='info' className='ml-5 btn-lg' onClick={click}>Next Joke</Button>
         </PositionBtn>
         
     )

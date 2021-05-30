@@ -3,6 +3,7 @@ import Header from './Header'
 import Joke from './Joke'
 import Btn from './Btn'
 import Weather from './Weather'
+import ComeBack from './ComeBack'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -15,10 +16,11 @@ const Main = styled.main`
     height: 100vh;
 `
 
-const MainComponent = (props) => {
+const MainComponent = ({weather, temp, joke, click}) => {
     return(
         <Main>
-            <Weather weather={props.weather} temp={props.temp}/>
+            <ComeBack />
+            <Weather weather={weather} temp={temp}/>
             <Container className='p-5 flex justify-content-center shadow-lg p-3 mb-5 bg-white rounded'>
                 <Row className="justify-content-md-center position-relative">
                     <Col xs lg='1' className='p-0'></Col>
@@ -27,10 +29,10 @@ const MainComponent = (props) => {
                             <Header />
                         </Row>
                         <Row>
-                            <Joke joke={props.joke}/>
+                            <Joke joke={joke}/>
                         </Row>                  
                         <Row>
-                            <Btn click={props.click}/>
+                            <Btn click={click}/>
                         </Row>                        
                     </Col>
                     <Col xs lg='1' className='p-0'></Col>

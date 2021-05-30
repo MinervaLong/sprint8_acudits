@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Weather = (props) => {    
+const Weather = ({weather, temp}) => {    
     return(
-        <h4>Barcelona's forecast today: {props.weather} with {props.temp} &#x2103;</h4>
+        <h4>Barcelona's forecast today: {weather} with {temp} &#x2103;</h4>
     )
 }
 

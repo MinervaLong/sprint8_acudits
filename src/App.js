@@ -1,4 +1,9 @@
  import React, {useState, useEffect} from 'react'
+ import { 
+     BrowserRouter as Router,
+     Switch,
+     Route
+    } from 'react-router-dom'
  import MainComponent from './components/MainComponent'
  import Welcome from './components/Welcome' 
  import axios from 'axios' 
@@ -31,20 +36,17 @@
         setTemp(temp)
       },[]);
 
-    //Conditional rendering
-    const [currentView, setCurrentView] = useState('welcome')
-
-    const handleClick = () => {
-        setCurrentView('main')
-    }    
-
-    return ( 
-        <div>
-            {currentView === 'welcome' && <Welcome click={handleClick} />}
-            {currentView === 'main' &&             
-                <MainComponent joke={joke} weather={weather} temp={temp} click={nextJoke}/>
-            }     
-        </div>
+    return (
+        <React.Fragment>
+        <Router>
+            <Switch>
+                <Route exact path="/" component={Welcome} /> 
+                <Route path="/components/MainComponent">
+                    <MainComponent joke={joke} weather={weather} temp={temp} click={nextJoke} />
+                </Route>      
+            </Switch>                
+        </Router>
+        </React.Fragment> 
     );
 };
 
