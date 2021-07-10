@@ -1,4 +1,5 @@
-
+// In order to get the Openweather apikey you should register in https://openweathermap.org/api 
+// and copy it inside ''
 export function getApiKey() {
-    return 'a313c298d4e32eff504a5e0e4e2bd972'
+    return ''
 }
