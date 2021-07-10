@@ -28,12 +28,15 @@
     //Call to Weather API with Axios
      const [weather, setWeather] = useState('');
      const [temp, setTemp] = useState('')
-     useEffect(async () => {        
+     useEffect( () => {
+        async function fetchData() {
         const result = await axios.get(weatherUrl) 
         const {description} = result.data.weather[0]
         const {temp} = result.data.main
         setWeather(description)
         setTemp(temp)
+        }
+      fetchData();
       },[]);
 
     return (
